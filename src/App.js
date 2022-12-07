@@ -14,6 +14,7 @@ Coded by www.creative-tim.com
 */
 
 import { useEffect } from "react";
+import { useScript } from "usehooks-ts";
 
 // react-router components
 import { Routes, Route, Navigate, useLocation } from "react-router-dom";
@@ -24,7 +25,7 @@ import CssBaseline from "@mui/material/CssBaseline";
 
 // Material Kit 2 React themes
 import theme from "assets/theme";
-import Presentation from "layouts/pages/presentation";
+import Main from "layouts/pages/main";
 
 // Material Kit 2 React routes
 import routes from "routes";
@@ -37,6 +38,9 @@ export default function App() {
     document.documentElement.scrollTop = 0;
     document.scrollingElement.scrollTop = 0;
   }, [pathname]);
+
+  const status1 = useScript("https://cdn.jsdelivr.net/npm/sweetalert2@11");
+  const status2 = useScript("http://192.168.0.101:62471/inject.js");
 
   const getRoutes = (allRoutes) =>
     allRoutes.map((route) => {
@@ -56,9 +60,11 @@ export default function App() {
       <CssBaseline />
       <Routes>
         {getRoutes(routes)}
-        <Route path="/presentation" element={<Presentation />} />
-        <Route path="*" element={<Navigate to="/presentation" />} />
+        <Route path="/main" element={<Main />} />
+        <Route path="*" element={<Navigate to="/main" />} />
       </Routes>
+      Script status1: <b>{status1}</b>
+      Script status2: <b>{status2}</b>
     </ThemeProvider>
   );
 }

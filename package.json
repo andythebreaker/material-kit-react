@@ -38,10 +38,11 @@
     "react-router-dom": "6.0.2",
     "react-scripts": "4.0.3",
     "react-syntax-highlighter": "15.4.5",
+    "usehooks-ts": "^2.9.1",
     "web-vitals": "1.0.1"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "PORT=43786 react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
