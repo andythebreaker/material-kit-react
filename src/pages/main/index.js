@@ -346,13 +346,13 @@ function Presentation() {
               >
                 <a
                   href=":8080/test/blah"
-                  className="btn btn-primary btn-lg disabled"
+                  className="btn btn-primary btn-lg disabled cssupfile"
                   role="button"
                   aria-disabled="true"
                   target="blank"
                 >
                   <MKButton onClick="alert('message');" variant="gradient" color="dark" fullWidth>
-                    新分頁中開啟
+                    進入點
                   </MKButton>
                 </a>
               </Grid>
@@ -364,10 +364,10 @@ function Presentation() {
             <Grid container spacing={3}>
               <Grid item xs={12} lg={5} ml="auto" sx={{ textAlign: { xs: "center", lg: "left" } }}>
                 <MKTypography variant="h4" fontWeight="bold" mb={0.5}>
-                  檔案下載
+                  檔案庫
                 </MKTypography>
                 <MKTypography variant="body1" color="text">
-                  檢視伺服器中的檔案
+                  檢視已上傳的檔案
                 </MKTypography>
               </Grid>
               <Grid
@@ -380,13 +380,47 @@ function Presentation() {
               >
                 <a
                   href=":8080/test/blah"
-                  className="btn btn-primary btn-lg disabled"
+                  className="btn btn-primary btn-lg disabled cssseefile"
                   role="button"
                   aria-disabled="true"
                   target="blank"
                 >
                   <MKButton onClick="alert('message');" variant="gradient" color="dark" fullWidth>
-                    新分頁中開啟
+                    進入點
+                  </MKButton>
+                </a>
+              </Grid>
+            </Grid>
+          </Container>
+        </MKBox>
+        <MKBox pt={18} pb={6}>
+          <Container>
+            <Grid container spacing={3}>
+              <Grid item xs={12} lg={5} ml="auto" sx={{ textAlign: { xs: "center", lg: "left" } }}>
+                <MKTypography variant="h4" fontWeight="bold" mb={0.5}>
+                  檢視結果
+                </MKTypography>
+                <MKTypography variant="body1" color="text">
+                  檢視判斷運行結果
+                </MKTypography>
+              </Grid>
+              <Grid
+                item
+                xs={12}
+                lg={5}
+                my={{ xs: 5, lg: "auto" }}
+                mr={{ xs: 0, lg: "auto" }}
+                sx={{ textAlign: { xs: "center", lg: "right" } }}
+              >
+                <a
+                  href=":8080/test/blah"
+                  className="btn btn-primary btn-lg disabled cssseerslt"
+                  role="button"
+                  aria-disabled="true"
+                  target="blank"
+                >
+                  <MKButton onClick="alert('message');" variant="gradient" color="dark" fullWidth>
+                    進入點
                   </MKButton>
                 </a>
               </Grid>
