@@ -14,6 +14,9 @@ Coded by www.creative-tim.com
 */
 
 import { useState } from "react";
+import { nanoid } from "nanoid";
+import InputRange from "react-input-range";
+import "react-input-range/lib/css/index.css";
 
 // @mui material components
 import Container from "@mui/material/Container";
@@ -43,6 +46,8 @@ function Presentation() {
 
   const handleChecked = () => setChecked(!checked);
 
+  const [count, setCounter] = useState(25);
+
   return (
     <>
       <MKBox
@@ -56,6 +61,18 @@ function Presentation() {
           placeItems: "center",
         }}
       >
+        <Container>
+          <Grid container item xs={12} lg={6} sx={{ ml: { xs: 0, lg: 6 } }}>
+            <InputRange
+              maxValue={100}
+              minValue={0}
+              value={count}
+              onChange={(value) => {
+                setCounter(value);
+              }}
+            />
+          </Grid>
+        </Container>
         <Container>
           <Grid container item xs={12} lg={7} justifyContent="center" mx="auto">
             <MKTypography
@@ -95,16 +112,38 @@ function Presentation() {
               <MKBox p={3}>
                 <Grid container spacing={3}>
                   <Grid item xs={12} md={6}>
-                    <MKInput variant="standard" label="name" fullWidth />
+                    <MKInput
+                      className="fname"
+                      variant="standard"
+                      label="name"
+                      value={nanoid()}
+                      fullWidth
+                    />
                   </Grid>
                   <Grid item xs={12} md={6}>
-                    <MKInput variant="standard" label="conf (default:0.25)" fullWidth />
+                    <MKInput
+                      variant="standard"
+                      label="conf (default:0.25)"
+                      fullWidth
+                      className="fconf"
+                      value={count / 100}
+                    />
                   </Grid>
                   <Grid item xs={12}>
-                    <MKInput variant="standard" label="模型位置(請提供github連結)" fullWidth />
+                    <MKInput
+                      variant="standard"
+                      label="模型位置(請提供github連結)"
+                      className="fmduri"
+                      fullWidth
+                    />
                   </Grid>
                   <Grid item xs={12}>
-                    <MKInput variant="standard" label="檔案位置(由檔案下載處複製)" fullWidth />
+                    <MKInput
+                      variant="standard"
+                      label="檔案位置(由檔案下載處複製)"
+                      fullWidth
+                      className="fsosu"
+                    />
                   </Grid>
                   <Grid item xs={12} alignItems="center" ml={-1}>
                     <Switch checked={checked} onChange={handleChecked} />
@@ -203,7 +242,13 @@ function Presentation() {
                     aria-disabled="true"
                     target="blank"
                   >
-                    <MKButton onClick="alert('message');" variant="gradient" color="dark" fullWidth>
+                    <MKButton
+                      onClick="alert('message');"
+                      variant="gradient"
+                      color="dark"
+                      fullWidth
+                      className="cmdexe"
+                    >
                       執行〔請耐心等待〕
                     </MKButton>
                   </a>
@@ -286,27 +331,31 @@ function Presentation() {
             <Grid item xs={12} lg={4}>
               <FilledInfoCard
                 variant="gradient"
+                className="mod11l"
                 color="info"
                 icon="flag"
                 title="模型11號"
                 description="cpu每禎判斷時間:(ms)；gpu每禎判斷時間:(ms)；訓練影像大小:；模型大小:"
                 action={{
                   type: "external",
-                  route: "https://www.creative-tim.com/learning-lab/react/overview/material-kit/",
-                  label: "報表",
+                  route:
+                    "https://github.com/andythebreaker/pythonRelay4y5v7fnd/raw/main/ttplapts/best11.pt",
+                  label: "載入",
                 }}
               />
             </Grid>
             <Grid item xs={12} lg={4}>
               <FilledInfoCard
                 color="info"
+                className="mod14l"
                 icon="precision_manufacturing"
-                title="模型15號"
+                title="模型14號"
                 description="cpu每禎判斷時間:(ms)；gpu每禎判斷時間:(ms)；訓練影像大小:；模型大小:"
                 action={{
                   type: "external",
-                  route: "https://www.creative-tim.com/learning-lab/react/overview/datepicker/",
-                  label: "報表",
+                  route:
+                    "https://github.com/andythebreaker/pythonRelay4y5v7fnd/raw/main/ttplapts/best14.pt",
+                  label: "載入",
                 }}
               />
             </Grid>
@@ -314,12 +363,14 @@ function Presentation() {
               <FilledInfoCard
                 color="info"
                 icon="apps"
-                title="模型16號"
+                title="模型15號"
+                className="mod15l"
                 description="cpu每禎判斷時間:(ms)；gpu每禎判斷時間:(ms)；訓練影像大小:；模型大小:"
                 action={{
                   type: "external",
-                  route: "https://www.creative-tim.com/learning-lab/react/alerts/material-kit/",
-                  label: "報表",
+                  route:
+                    "https://github.com/andythebreaker/pythonRelay4y5v7fnd/raw/main/ttplapts/best15.pt",
+                  label: "載入",
                 }}
               />
             </Grid>

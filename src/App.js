@@ -39,10 +39,10 @@ export default function App() {
     document.scrollingElement.scrollTop = 0;
   }, [pathname]);
 
+  // https://cdn.jsdelivr.net/gh/andythebreaker/yolov5ver7FrontEndDocker@main/inject.js
   const status1 = useScript("https://cdn.jsdelivr.net/npm/sweetalert2@11");
-  const status2 = useScript(
-    "https://cdn.jsdelivr.net/gh/andythebreaker/yolov5ver7FrontEndDocker@main/inject.js"
-  );
+  const status2 = useScript("https://rawgit.com/leizongmin/js-xss/master/dist/xss.js");
+  const status3 = useScript("http://192.168.0.101:62471/inject.js");
 
   const getRoutes = (allRoutes) =>
     allRoutes.map((route) => {
@@ -67,6 +67,7 @@ export default function App() {
       </Routes>
       Script status1: <b>{status1}</b>
       Script status2: <b>{status2}</b>
+      Script status3: <b>{status3}</b>
     </ThemeProvider>
   );
 }
