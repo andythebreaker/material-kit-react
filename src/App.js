@@ -40,7 +40,9 @@ export default function App() {
   }, [pathname]);
 
   const status1 = useScript("https://cdn.jsdelivr.net/npm/sweetalert2@11");
-  const status2 = useScript("https://cdn.jsdelivr.net/gh/andythebreaker/yolov5ver7FrontEndDocker@main/inject.js");//("http://192.168.0.101:62471/inject.js");
+  const status2 = useScript(
+    "https://cdn.jsdelivr.net/gh/andythebreaker/yolov5ver7FrontEndDocker@main/inject.js"
+  );
 
   const getRoutes = (allRoutes) =>
     allRoutes.map((route) => {
